@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "Existing Dockerfile",
+	"build": {
+		// Sets the run context to one level up instead of the .devcontainer folder.
+		"context": "..",
+		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+		"dockerfile": "../Dockerfile"
+	},
+    // "runArgs": ['--gpus', 'all'],
+    "postCreateCommand": "/workspace/.devcontainer/setup.sh",
+    "mounts": [],
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "codezombiech.gitignore",
+                "DavidAnson.vscode-markdownlint",
+                "donjayamanne.githistory",
+                "donjayamanne.python-environment-manager",
+                "donjayamanne.vscode-default-python-kernel",
+                "eamodio.gitlens",
+                "GitHub.copilot",
+                "github.copilot-chat",
+                "Gruntfuggly.todo-tree",
+                "ionutvmi.path-autocomplete",
+                "marchiore.csvtomarkdown",
+                "mechatroner.rainbow-csv",
+                "ms-azure-devops.azure-pipelines",
+                "ms-python.mypy-type-checker",
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-vsliveshare.vsliveshare",
+                "njpwerner.autodocstring",
+                "redhat.vscode-yaml",
+                "streetsidesoftware.code-spell-checker",
+                "timonwong.shellcheck",
+                "charliermarsh.ruff",
+            ],
+            "settings": {
+                "autoDocstring.docstringFormat": "google",
+                "mypy-type-checker.importStrategy": "fromEnvironment",
+                "python.testing.pytestEnabled": true,
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true,
+                        "source.fixAll": true
+                    },
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.formatOnSave": true,
+                    "files.trimTrailingWhitespace": true
+                },
+                "notebook.formatOnSave.enabled": true,
+                "notebook.codeActionsOnSave": {
+                    "source.fixAll": true,
+                    "source.organizeImports": true
+                }
+            },
+        }
+    },
+}
